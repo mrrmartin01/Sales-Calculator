@@ -10,14 +10,18 @@
       </head>
     <body>
         <div class="loginSection">
-            <div class="logo">
-                <img class="topImage" src="img/smiley2.png" alt="Notepad clip art" />
-            </div> 
-                <form class="loginForm">
-                    <input type="text" id="emailSide" placeholder="Username/Email">
-                    <input type="password" id="pwd" placeholder="Password">
-                </form>
+            <img class="topImage" src="img/smiley2.png" alt="Notepad clip art" />
         </div>
+            <form class="loginForm">
+                <input type="email" id="emailSide" placeholder="Username/Email">
+                <input type="password" id="pwd" placeholder="Password">
+                <h3 class="forgotPwd" onclick="openPage('reset')">Forgot Password?</h3>
+            </form>
+
+            <div class="loginButtons">
+                <button class="btnEnter" onclick="openPage('login')">Let's get started</button>
+            </div>
+        
     
     </body>
 </html>

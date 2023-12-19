@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family:'Times New Roman';
 }
 
 
@@ -117,37 +118,74 @@
 
 /* Login Page */
 .loginSection{
-    margin-top: 5%;
+    margin-top: 2%;
     position: relative;
     align-items: center;
     justify-content: center;
+    transform: translateX(42%);
 }
 
-.logo {
-    position: relative;
-    top: 55%; 
-    left: 45%;
-}
 
 .topImage{
-    height: 40%; 
-    width:10%;
+    height: 50%; 
+    width:20%;
 }
 
-.loginForm{
+
+.loginForm {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
+    width: 500px; 
+    margin: 5% auto;
+}
+
+.loginForm input[type="email"],
+.loginForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.loginForm input[type="email"]::placeholder,
+.loginForm input[type="password"]::placeholder {
+    color: #999;
+}
+
+.loginForm input[type="email"]:focus,
+.loginForm input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+.forgotPwd{
+    transform: translateX(80%);
+    color:#707070;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.loginButtons{
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.emailSide{
-    margin-bottom: 10px;
+
+.btnEnter{
+    background-color: #ff9f00;
+    font-size: large;
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
 }
-
-
-
-
 
 
 
