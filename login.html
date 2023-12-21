@@ -19,9 +19,78 @@
             </form>
 
             <div class="loginButtons">
-                <button class="btnEnter" onclick="openPage('login')">Let's get started</button>
+                <button class="btnEnter clickEnter" onclick="openPage('login')">Let's get started</button>
+                <button class="btnEnter facebook" onclick="openPage('login')">Let's get started</button>
+                <button class="btnEnter google" onclick="openPage('login')">Let's get started</button>
+                <button class="btnEnter apple" onclick="openPage('login')">Let's get started</button>
             </div>
         
     
     </body>
 </html>
+
+/* Login Page */
+.loginSection {
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topImage {
+    height: 50%; 
+    width: 20%;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Adjusted width */
+    margin: 5% auto;
+}
+
+.loginForm input[type="email"],
+.loginForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.loginForm input[type="email"]::placeholder,
+.loginForm input[type="password"]::placeholder {
+    color: #999;
+}
+
+.loginForm input[type="email"]:focus,
+.loginForm input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.forgotPwd {
+    margin-left: auto; /* Instead of transform for alignment */
+    color: #707070;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.loginButtons {
+    display: flex;
+    flex-direction: column; /* Align buttons vertically */
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Center buttons */
+    gap: 10px; /* Spacing between buttons */
+}
+
+.btnEnter {
+    background-color: #ff9f00;
+    font-size: 1rem; /* Adjusted font size */
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #ffffff;
+}
