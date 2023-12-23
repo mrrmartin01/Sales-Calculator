@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family:'Times New Roman';
+    font-family:'Times New Roman', monospace;
 }
 
 
@@ -117,71 +117,128 @@
 
 
 /* Login Page */
-.loginSection{
-    margin-top: 2%;
+.loginSection {
+    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
-.topImage{
-    height: 50%; 
-    width:20%;
+.topImage {
+    height: 150px; 
+    width: auto;
+}
+.container{
+    text-align: center;
 }
 
-
 .loginForm {
+    width: 500px;
+    padding: 20px;
+    margin: 0 auto;
     display: flex;
-    flex-direction:column;
-    width: 200px; 
-    margin: 5% auto;
+    flex-direction: column;
 }
 
 .loginForm input[type="email"],
 .loginForm input[type="password"] {
-    width: 60vh;
+    display: block;
     padding: 10px;
     margin-bottom: 15px;
     border: none;
     border-bottom: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    
 }
-
-.loginForm input[type="email"]::placeholder,
-.loginForm input[type="password"]::placeholder {
-    color: #999;
-}
-
-.loginForm input[type="email"]:focus,
-.loginForm input[type="password"]:focus {
-    outline: none;
-    border-color: #007bff; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
 
 .forgotPwd{
-    transform: translateX(80%);
-    color:#707070;
+    color: #707070;
     font-size: 15px;
     cursor: pointer;
+    align-self: flex-end;
 }
 
-.loginButtons{
-    width: 50%;
+.loginButtons {
+    width: 500px;
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto;
+   padding: 10px;
+   text-align: center;
+   font-size: 20px;
+   font-family:monospace
 }
 
 
 .btnEnter{
-    background-color: #ff9f00;
     font-size: large;
-    height: 2rem;
+    height: 2.3rem;
+    margin: 3px;
     border: none;
-    border-radius: 0.5rem;
     color: #ffffff;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
+
+.btnEnter i{
+    margin-right: 30%;
+    margin-left: 2%;
+}
+
+.optionText{
+    margin: 2.5%;
+}
+
+.clickEnter{
+    background-color:#ff9f00;
+    padding-left: 40%;
+}
+.facebook{
+    background-color: rgba(71, 71, 189, 0.842);
+}
+
+.google{
+    background-color:rgb(39, 148, 221) ;
+}
+
+.apple{
+    background-color: #000000;
+}
+
+
+.signupText {
+    color: #707070;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+/* Notes */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
