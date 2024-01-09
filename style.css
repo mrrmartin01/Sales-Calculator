@@ -4,6 +4,21 @@
     font-family:'Times New Roman', monospace;
 }
 
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    height: 5rem;
+    border-radius: 1rem;
+}
+
+
 
 /* Index Page */
 .backCover{
@@ -334,24 +349,110 @@
     margin: 0 auto;
 }
 
-.splitter{
+.splitter {
     display: flex;
     background-color: #ff9f00;
-    justify-content: space-between;
+    justify-content: center; 
+    align-items: center;
     padding: 5%;
     color: #fff;
     font-size: 2em;
 }
 
 .textHead{
-    margin-right: 23em;
-    font-weight: bolder;
-    font-family: sans-serif;
+    width: 70%;
+    height: 2em;
+    margin-right: 20%;
+    color: #fff;
+    font-size:1em ;
+    border: none;
+    background: transparent;
+    padding-left: 5%;
+}
+
+.textHead:focus{
+    outline: none;
 }
 
 .fa-chevron-left, 
 .fa-ellipsis-v{
     cursor: pointer;
+}
+
+
+.notesArena {
+    width: 100%;
+    height: 80vh; 
+    margin: 0 auto;
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden;
+}
+
+#editor {
+    width: 97%;
+    height: calc(100vh - 100px);
+    outline: none;
+    border: none;
+    padding: 1%;
+    font-size: 1.5em;
+    resize: none;
+    color: #000000; 
+    background-color: #fff; 
+    overflow: auto;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+#editor::-webkit-scrollbar {
+    width: 5px;
+    
+  }
+  
+#editor::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+#editor::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 1rem;
+  }
+
+
+
+.altSection{
+    height: 6em;
+    margin-bottom: 0;
+    background-color: #b6afaf;
+    border-radius: 0.5em;
+    padding: 1%;
+    text-align: center;
+}
+
+.optionHeader,
+.saveButton,
+.deleteButton{
+    font-size: 1em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: sans-serif;
+}
+
+.saveButton,
+.deleteButton{
+    cursor: pointer;
+}
+
+.saveButton:hover,
+.deleteButton:hover{
+    transform: scale(1.2);
+    border-radius: 1em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%,#707070 0%);
+}
+
+.thickHR{
+    height: 0.2em;
+    background-color: #fff;
 }
 
 

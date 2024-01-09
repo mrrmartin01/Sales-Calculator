@@ -10,11 +10,22 @@
   </head>
   <body>
     <div class="textArea">
-        <div class="splitter">
-            <i class="fa fa-chevron-left" aria-hidden="true"  onclick="openPage('back')"></i>
-            <h5 class="textHead">Motivational quotes</h5>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+      <div class="splitter">
+          <i class="fa fa-chevron-left" aria-hidden="true"  onclick="openPage('back')"></i>
+          <input placeholder="Type your title here" type="text" class="textHead"></input>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+      </div>
+      <div class="notesArena">
+        <textarea id="editor" spellcheck="true" placeholder="Type notes here" type="text"></textarea>
+        <div class="altSection">
+          <h5 class="optionHeader">What next?</h5>
+          <hr class="thickHR">
+          <h6 class="saveButton">Save</h6>
+          <hr>
+          <h6 class="deleteButton">Delete</h6>
         </div>
+      </div>
+        
     </div>
     
 
