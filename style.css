@@ -345,6 +345,8 @@
     border-radius: 1em;
 }
 
+
+/* textHolder */
 .textArea{
     margin: 0 auto;
 }
@@ -414,19 +416,23 @@
   }
   
 #editor::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: transparent;
     border-radius: 1rem;
   }
 
 
 
-.altSection{
-    height: 6em;
-    margin-bottom: 0;
+  .altSection {
+    position: fixed;
+    bottom: 0;
+    align-self: center;
+    width: 50%;
+    margin: 0 auto;
     background-color: #b6afaf;
-    border-radius: 0.5em;
+    border-radius: 1em;
     padding: 1%;
     text-align: center;
+    z-index: 1;
 }
 
 .optionHeader,

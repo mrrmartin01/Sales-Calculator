@@ -33,75 +33,128 @@ function validateEmail() {
 };
 
 
-    let noteCounter = 1; // Counter for unique hidden note IDs
-    const colors = ['#876FB9', '#CC768F', '#639F49', '#6B85BB', '#ff9f00', '#050']; // Array of colors
+let noteCounter = 1; 
+const colors = ['#876FB9', '#CC768F', '#639F49', '#6B85BB', '#ff9f00', '#050','#FF5733', '#C70039', '#900C3F', '#581845', '#5D6D7E','#9A7D0A', '#A04000', '#6E2C00', '#004D40', '#1B5E20','#9E9E9E', '#424242', '#1B1464', '#4A148C', '#7B1FA2','#AF52BF', '#2E86C1', '#154360', '#5D6D7E', '#F1C40F']; // Array of colors
+function getRandomColor() {
+    return colors[Math.floor(Math.random() * colors.length)];
+}
 
-    function getRandomColor() {
-        return colors[Math.floor(Math.random() * colors.length)];
+document.addEventListener('DOMContentLoaded', () => {
+    const moreButton = document.querySelector('.moreBox');
+    
+    if (moreButton) {
+        moreButton.addEventListener('click', () => {
+            openNewNote();
+        });
     }
 
-    function openNewNote() {
-        const gridContainer = document.querySelector('.boxes');
-        const newNote = document.createElement('div');
-        newNote.classList.add('hiddenNote');
-        newNote.style.display = 'grid';             //* Or any other desired display value
-        newNote.style.backgroundColor = getRandomColor(); // Set random color
-        newNote.innerHTML = `
-            <div class="ellipsis-icon" onclick="openPage('notepad')">
-                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-            </div>
-            <h5 class="noteHeader" style="color: white;">New Note ${noteCounter}</h5>
-            <h6 class="noteText">Contents here....</h6>
-        `;
-        gridContainer.appendChild(newNote);
-        noteCounter++; // Increment the note counter for uniqueness
-    };
-
-
-
-
-    // Notes js
-    let allNotes = [];
-
-    let title = document.querySelector('.textHead');
-    let content = document.querySelector('#editor');
-    let saveButton = document.querySelector('.saveButton');
-    let deleteButton = document.querySelector('.deleteButton');
-
-
-    if (localStorage.getItem('notes')){
-        let storedData = JSON.parse(localStorage.getItem('notes'))
-
-        title.value = storedData.title
-        content.value = storedData.content
+    const loadingToNotes = document.querySelector('.eachBox');
+    
+    if (loadingToNotes) {
+        loadingToNotes.addEventListener('click', () => {
+            openPage('notepad');
+        });
     }
- 
-    
+});
 
-    saveButton.addEventListener('click', () => {
-        let titleValue = title.value;
-        let contentValue = content.value;
-        allNotes.push({
-            title: titleValue,
-            content: contentValue
-        })
-    
-        localStorage.setItem('notes', JSON.stringify({
-            title:titleValue,
-            content:contentValue
-        }));
-        
-        title.value = titleValue
-        content.value = contentValue
+
+function openNewNote(id) {
+    const gridContainer = document.querySelector('.boxes');
+    const moreBox = document.querySelector('.moreBox'); 
+    const newNote = document.createElement('div');
+    newNote.classList.add('eachBox');
+    newNote.style.display = 'grid';         
+    newNote.style.backgroundColor = getRandomColor(); 
+    newNote.innerHTML = `
+        <div class="ellipsis-icon">
+            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+        </div>
+        <h5 class="noteHeader" style="color: white;">New Note ${noteCounter}</h5>
+        <h6 class="noteText">Contents here....</h6>
+    `;
+    gridContainer.insertBefore(newNote, moreBox);
+    noteCounter++; 
+
+    newNote.addEventListener('click', () => {
+        openPage('notepad');
     });
+}
+
+
+
+
+
+
+
+
+
+// Notes js
+// const notesContainer = document.querySelector('.boxes');
+// const addNotesButton = notesContainer.querySelector('.moreBox');
+// addNotesButton.addEventListener('click', openNewNote, false);
+
+function getNotes(){
+    return JSON.parse(localStorage.getItem("noted-notes") || "[]");
+}
+
+
+function saveNotes(notes){
+    localStorage.setItem("noted-notes", JSON.stringify(notes));
+}
+
+
+function addNote(){
+
+}
+  
+
+function updateNotes(){
+
+}
+
+
+function deleteNote(){
+
+}
+
+
+
+
+
+// let allNotes = [];
+// let title = document.querySelector('.textHead');
+// let content = document.querySelector('#editor');
+// let saveButton = document.querySelector('.saveButton');
+// let deleteButton = document.querySelector('.deleteButton');
+// if (localStorage.getItem('notes')){
+//     let storedData = JSON.parse(localStorage.getItem('notes'))
+//     title.value = storedData.title
+//     content.value = storedData.content
+// }
+
+
+// saveButton.addEventListener('click', () => {
+//     let titleValue = title.value;
+//     let contentValue = content.value;
+//     allNotes.push({
+//         title: titleValue,
+//         content: contentValue
+//     })
+
+//     localStorage.setItem('notes', JSON.stringify({
+//         title:titleValue,
+//         content:contentValue
+//     }));
     
+//     title.value = titleValue
+//     content.value = contentValue
+// });
 
-    deleteButton.addEventListener('click', () => {
-        allNotes.shift({
-             noteCounter
-        })
-    })
-
+// deleteButton.addEventListener('click', () => {
+//     allNotes.shift({
+//          noteCounter
+//     })
+// })
 
 
 
