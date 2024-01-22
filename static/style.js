@@ -58,6 +58,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function alterSection() {
+    const faEllipsisV = document.querySelector('.fa-ellipsis-v');
+    const body = document.body;
+
+    const altSection = document.createElement('div');
+    altSection.classList.add('altSection');
+    altSection.innerHTML = `
+        <h5 class="optionHeader">What next?</h5>
+        <hr class="thickHR">
+        <h6 class="saveButton">Save</h6>
+        <hr>
+        <h6 class="deleteButton">Delete</h6>
+    `;
+
+    faEllipsisV.addEventListener('click', () => {
+        if (!body.contains(altSection)) {
+            body.appendChild(altSection);
+        }
+
+        else if (body.contains(altSection)){
+            body.removeChild(altSection);
+        }
+    });
+}
+
+// Call the function to set up the event listener
+alterSection();
+
+getNotes().forEach(note => {
+    const noteElement = createNoteElement(note.id, note.content);
+    notesContainer.insertBefore(noteElement, addNoteButton);
+});
+
 function openNewNote(id) {
     const gridContainer = document.querySelector('.boxes');
     const moreBox = document.querySelector('.moreBox'); 
